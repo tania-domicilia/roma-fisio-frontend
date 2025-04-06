@@ -25,9 +25,10 @@ export default function SuggerisciFisioterapistiPage() {
     setRisultati([]);
     setPoint(null);
 
-    const encodedAddress = encodeURIComponent(indirizzo);
-    fetch(`https://nominatim.openstreetmap.org/search/${encodedAddress}?format=json&limit=1`);
-    const geo = await resGeo.json();
+  const encodedAddress = encodeURIComponent(indirizzo);
+  const resGeo = await fetch(`https://nominatim.openstreetmap.org/search/${encodedAddress}?    format=json&limit=1`);
+  const geo = await resGeo.json();
+
     if (!geo.length) {
       alert("Indirizzo non trovato");
       setLoading(false);
@@ -61,7 +62,7 @@ export default function SuggerisciFisioterapistiPage() {
 const creaPiano = (f) => {
   setFormFisio(f);
 
-    alert(\`Piano creato per il fisioterapista \${f.nominativo} (funzione da completare!)\`);
+    alert(`Piano creato per il fisioterapista ${f.nominativo} (funzione da completare!)`);
     // TODO: qui collegheremo al paziente, con date
   };
 
