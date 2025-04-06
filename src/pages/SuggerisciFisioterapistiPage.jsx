@@ -26,7 +26,7 @@ export default function SuggerisciFisioterapistiPage() {
     setPoint(null);
 
     const encodedAddress = encodeURIComponent(indirizzo);
-    const resGeo = await fetch(`https://nominatim.openstreetmap.org/search/${encodedAddress}?format=json&limit=1`)
+    const resGeo = await fetch(`https://nominatim.openstreetmap.org/search/${encodedAddress}?format=json&limit=1`);
 format=json&limit=1\`);
     const geo = await resGeo.json();
     if (!geo.length) {
