@@ -9,9 +9,9 @@ export default function DashboardPage() {
   const [piani, setPiani] = useState([]);
 
   useEffect(() => {
-    fetch(\`\${API_URL}/pazienti\`).then(r => r.json()).then(setPazienti);
-    fetch(\`\${API_URL}/fisioterapisti\`).then(r => r.json()).then(setFisioterapisti);
-    fetch(\`\${API_URL}/piani\`).then(r => r.json()).then(setPiani);
+    fetch(`${API_URL}/pazienti`).then(r => r.json()).then(setPazienti);
+    fetch(`${API_URL}/fisioterapisti`).then(r => r.json()).then(setFisioterapisti);
+    fetch(`${API_URL}/piani`).then(r => r.json()).then(setPiani);
   }, []);
 
   const oggi = new Date();
