@@ -36,7 +36,7 @@ export default function SuggerisciFisioterapistiPage() {
     const punto = turf.point([parseFloat(geo[0].lon), parseFloat(geo[0].lat)]);
     setPoint([parseFloat(geo[0].lat), parseFloat(geo[0].lon)]);
 
-    const resFisio = await fetch(\`\${API_URL}/fisioterapisti\`);
+    const resFisio = await fetch(`${API_URL}/fisioterapisti`);
     const fisioterapisti = await resFisio.json();
 
     const compatibili = fisioterapisti.filter(f => {
