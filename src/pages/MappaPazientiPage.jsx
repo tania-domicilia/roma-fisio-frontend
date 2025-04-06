@@ -44,7 +44,7 @@ export default function MappaPazientiPage() {
         const coords = await Promise.all(
           data.map(async (p) => {
             const fullAddress = encodeURIComponent(`${p.indirizzo}, ${p.cap} ${p.citta}`);
-            const res = await fetch(\`\${NOMINATIM_URL}/\${fullAddress}?format=json&limit=1\`);
+            const res = await fetch(`${NOMINATIM_URL}/${fullAddress}?format=json&limit=1`);
             const geo = await res.json();
             if (geo.length > 0) {
               return {
