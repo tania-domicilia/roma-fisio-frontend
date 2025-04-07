@@ -8,11 +8,13 @@ import SuggerisciFisioterapistiPage from "../pages/SuggerisciFisioterapistiPage"
 import DashboardPage from "../pages/DashboardPage";
 import { useEffect, useState } from "react";
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
 export default function AppRoutes() {
   const [scadenze, setScadenze] = useState(false);
 
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL + "/piani")
+    fetch(`${API_URL}/piani`)
       .then((res) => res.json())
       .then((data) => {
         const oggi = new Date();
@@ -47,3 +49,4 @@ export default function AppRoutes() {
     </Router>
   );
 }
+
